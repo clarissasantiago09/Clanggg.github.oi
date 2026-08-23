@@ -1250,6 +1250,200 @@ img {
     color: var(--pink-light);
 }
 
+/* =========================================
+   PROJECTS
+========================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.project-card {
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background:
+        var(--black-card);
+
+    transition: .4s;
+}
+
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(255,122,203,.35);
+}
+
+
+.project-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    color: var(--gray-dark);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.project-top span:first-child {
+    color: var(--pink);
+}
+
+
+.project-art {
+    height: 230px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+}
+
+
+.project-pink .project-art {
+    background:
+        linear-gradient(
+            135deg,
+            #38142e,
+            #a23d7d
+        );
+}
+
+
+.project-purple .project-art {
+    background:
+        linear-gradient(
+            135deg,
+            #211542,
+            #704bd0
+        );
+}
+
+
+.project-violet .project-art {
+    background:
+        linear-gradient(
+            135deg,
+            #321b4b,
+            #b269e8
+        );
+}
+
+
+.project-dark .project-art {
+    background:
+        linear-gradient(
+            135deg,
+            #17131b,
+            #513a60
+        );
+}
+
+
+.project-art .circle {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    box-shadow:
+        0 0 0 20px rgba(255,255,255,.025),
+        0 0 0 40px rgba(255,255,255,.02);
+}
+
+
+.project-icon {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,255,255,.5);
+}
+
+
+.project-info {
+    padding: 25px;
+}
+
+
+.project-info h3 {
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+
+.project-info p {
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin-bottom: 15px;
+}
+
+
+.project-tag {
+    display: inline-block;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        1px solid
+        rgba(255,122,203,.3);
+
+    color: var(--pink);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    border-radius: 3px;
+}
+
 
 /* =========================================
    MOBILE
