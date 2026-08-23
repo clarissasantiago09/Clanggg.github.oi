@@ -1151,393 +1151,137 @@ img {
 
 
 /* =========================================
-   SKILLS
+   SKILLS DESCRIPTION
 ========================================= */
 
-.skills-layout {
-    display: grid;
+.section-description {
+    max-width: 650px;
 
-    grid-template-columns:
-        1.2fr
-        .8fr;
+    margin-top: 20px;
 
-    gap: 25px;
-}
-
-
-.skills-main {
-    border-top:
-        1px solid var(--border);
-}
-
-
-.skill-row {
-    display: grid;
-
-    grid-template-columns:
-        70px
-        1fr
-        50px;
-
-    align-items: center;
-
-    padding: 30px 15px;
-
-    border-bottom:
-        1px solid var(--border);
-
-    transition: .3s;
-}
-
-
-.skill-row:hover {
-    padding-left: 25px;
-
-    background:
-        rgba(255,122,203,.025);
-}
-
-
-.skill-number {
-    color: var(--pink);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
-
-.skill-name {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 28px;
-}
-
-
-.skill-arrow {
-    text-align: right;
-
-    color: var(--gray-dark);
-
-    font-size: 20px;
-
-    transition: .3s;
-}
-
-
-.skill-row:hover .skill-arrow {
-    color: var(--pink);
-
-    transform: translate(5px,-5px);
-}
-
-
-/* =========================================
-   TOOLS
-========================================= */
-
-.tools-card {
-    padding: 35px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,122,203,.08),
-            rgba(154,123,255,.06)
-        );
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 10px;
-}
-
-
-.tools-card > span {
-    color: var(--pink);
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-}
-
-
-.tools-card h3 {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 34px;
-
-    font-weight: 500;
-
-    margin: 15px 0 30px;
-}
-
-
-.tools-card h3 em {
-    color: var(--pink);
-
-    font-style: italic;
-}
-
-
-.tools {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-}
-
-
-.tool {
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 14px;
-
-    background:
-        rgba(0,0,0,.25);
-
-    border:
-        1px solid
-        rgba(255,255,255,.05);
-
-    border-radius: 5px;
-}
-
-
-.tool b {
-    width: 38px;
-    height: 38px;
-
-    display: grid;
-
-    place-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--pink),
-            var(--violet)
-        );
-
-    color: white;
-
-    border-radius: 5px;
-
-    font-size: 12px;
-}
-
-
-.tool span {
     color: var(--gray);
 
-    font-size: 12px;
+    font-size: 14px;
+
+    line-height: 1.8;
 }
 
 
 /* =========================================
-   PROJECTS
+   SKILL CONTENT
 ========================================= */
 
-.project-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 20px;
+.skill-content {
+    padding-right: 25px;
 }
 
 
-.project-card {
-    border:
-        1px solid var(--border);
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    background:
-        var(--black-card);
-
-    transition: .4s;
-}
-
-
-.project-card:hover {
-    transform: translateY(-8px);
-
-    border-color:
-        rgba(255,122,203,.35);
-}
-
-
-.project-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 20px 22px;
-
-    color: var(--gray-dark);
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-}
-
-
-.project-top span:first-child {
-    color: var(--pink);
-}
-
-
-.project-art {
-    height: 230px;
-
-    position: relative;
-
-    display: grid;
-
-    place-items: center;
-
-    overflow: hidden;
-}
-
-
-.project-pink .project-art {
-    background:
-        linear-gradient(
-            135deg,
-            #38142e,
-            #a23d7d
-        );
-}
-
-
-.project-purple .project-art {
-    background:
-        linear-gradient(
-            135deg,
-            #211542,
-            #704bd0
-        );
-}
-
-
-.project-violet .project-art {
-    background:
-        linear-gradient(
-            135deg,
-            #321b4b,
-            #b269e8
-        );
-}
-
-
-.project-dark .project-art {
-    background:
-        linear-gradient(
-            135deg,
-            #17131b,
-            #513a60
-        );
-}
-
-
-.project-art .circle {
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
-
-    box-shadow:
-        0 0 0 20px rgba(255,255,255,.025),
-        0 0 0 40px rgba(255,255,255,.02);
-}
-
-
-.project-icon {
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 55px;
-
-    color: white;
-
-    text-shadow:
-        0 0 30px
-        rgba(255,255,255,.5);
-}
-
-
-.project-info {
-    padding: 25px;
-}
-
-
-.project-info h3 {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 27px;
-
-    font-weight: 500;
-
+.skill-content .skill-name {
     margin-bottom: 8px;
 }
 
 
-.project-info p {
+.skill-content p {
+    max-width: 600px;
+
     color: var(--gray);
+
+    font-family: "DM Sans", sans-serif;
 
     font-size: 12px;
 
     line-height: 1.7;
 
-    max-width: 500px;
-
-    margin-bottom: 15px;
+    margin: 0;
 }
 
 
-.project-tag {
-    display: inline-block;
+/* =========================================
+   TOOL DESCRIPTIONS
+========================================= */
 
-    padding:
-        6px
-        10px;
+.tool-info {
+    flex: 1;
 
-    border:
-        1px solid
-        rgba(255,122,203,.3);
+    display: flex;
 
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.tool-info strong {
+    color: var(--white);
+
+    font-size: 14px;
+}
+
+
+.tool-info small {
     color: var(--pink);
 
-    font-size: 8px;
+    font-size: 9px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
-    border-radius: 3px;
+    text-transform: uppercase;
 }
 
 
+.tool-info p {
+    color: var(--gray-dark);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    margin-top: 3px;
+
+    max-width: 330px;
+}
+
+
+/* =========================================
+   TOOL HOVER
+========================================= */
+
+.tool:hover .tool-info strong {
+    color: var(--pink-light);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .section-description {
+        font-size: 13px;
+    }
+
+
+    .skill-content {
+        padding-right: 10px;
+    }
+
+
+    .skill-content p {
+        font-size: 11px;
+    }
+
+
+    .skill-name {
+        font-size: 21px;
+    }
+
+
+    .tool-info p {
+        font-size: 9px;
+    }
+
+}
 /* =========================================
    CONTACT
 ========================================= */
