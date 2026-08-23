@@ -1150,89 +1150,62 @@ img {
 }
 
 
-/* =========================================
-   SKILLS
-========================================= */
+/* ================= SKILL DESCRIPTION ================= */
 
-.skills-layout {
-    display: grid;
-
-    grid-template-columns:
-        1.2fr
-        .8fr;
-
-    gap: 25px;
+.skill-content {
+    flex: 1;
 }
 
 
-.skills-main {
-    border-top:
-        1px solid var(--border);
+.skill-description {
+    margin-top: 8px;
+
+    max-width: 550px;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    font-family: "DM Sans", sans-serif;
+
+    transition: 0.3s ease;
 }
 
 
-.skill-row {
-    display: grid;
+/* Hover effect */
 
-    grid-template-columns:
-        70px
-        1fr
-        50px;
-
-    align-items: center;
-
-    padding: 30px 15px;
-
-    border-bottom:
-        1px solid var(--border);
-
-    transition: .3s;
+.skill-row:hover .skill-description {
+    color: #d8c8d8;
 }
 
 
-.skill-row:hover {
-    padding-left: 25px;
-
-    background:
-        rgba(255,122,203,.025);
-}
-
-
-.skill-number {
-    color: var(--pink);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
+/* Skill name */
 
 .skill-name {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 28px;
+    transition: 0.3s ease;
 }
 
 
-.skill-arrow {
-    text-align: right;
-
-    color: var(--gray-dark);
-
-    font-size: 20px;
-
-    transition: .3s;
+.skill-row:hover .skill-name {
+    color: #ff7acb;
 }
 
 
-.skill-row:hover .skill-arrow {
-    color: var(--pink);
+/* Mobile */
 
-    transform: translate(5px,-5px);
+@media (max-width: 650px) {
+
+    .skill-description {
+        font-size: 10px;
+
+        line-height: 1.6;
+
+        max-width: 100%;
+    }
+
 }
-
 
 /* =========================================
    TOOLS
