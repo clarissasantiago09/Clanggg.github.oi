@@ -30,7 +30,11 @@
             <span>CMS</span>
         </a>
 
-        <nav>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#hobbies">Interests</a>
@@ -723,5 +727,24 @@
     </footer>
 
 
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('.site-nav');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.toggle('is-open');
+            menuToggle.classList.toggle('is-open', isOpen);
+            menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        siteNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                siteNav.classList.remove('is-open');
+                menuToggle.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
