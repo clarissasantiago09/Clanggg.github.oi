@@ -231,16 +231,6 @@ img {
         rgba(255, 122, 203, .4);
 }
 
-nav ul,
-nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    text-decoration: none;
-}
 
 /* =========================================
    HERO
@@ -1892,170 +1882,51 @@ footer p {
     }
 }
 
-/* =========================================
-   RESPONSIVE ENHANCEMENTS
-   ========================================= */
-
-html {
-    scroll-padding-top: 90px;
+/* ================================
+   REMOVE NAVBAR DOTS / BULLETS
+   ================================ */
+.navbar nav,
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+.navbar nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav a {
+    text-decoration: none;
+}
+
+/* Responsive images and no horizontal overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html,
 body {
-    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
 
-.navbar {
-    padding-inline: clamp(18px, 6vw, 80px);
-}
-
-.menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    padding: 9px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: rgba(255,255,255,.03);
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--white);
-    border-radius: 10px;
-    transition: transform .25s ease, opacity .25s ease;
-}
-
-.menu-toggle.is-open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.is-open span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.is-open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-.hero,
-.section,
-.contact-section {
-    width: 100%;
-}
-
-.hero {
-    max-width: 1600px;
-    margin-inline: auto;
-}
-
-.section > *,
-.contact-section > * {
-    max-width: 1200px;
-    margin-inline: auto;
-}
-
-.hero-content,
-.hero-photo {
-    min-width: 0;
-}
-
-.profile-details p,
-.career-card h3,
-.project-info h3,
-.skill-name h3,
-.tool span {
-    overflow-wrap: anywhere;
-}
-
-.hobby-image img,
-.image-container img {
-    display: block;
-}
-
-/* Large tablets / small laptops */
-@media (max-width: 1100px) {
-    .hero {
-        grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr);
-        gap: 45px;
-        padding-inline: 6%;
-    }
-
-    .image-container {
-        width: min(390px, 100%);
-        height: 540px;
-    }
-
-    .section,
-    .contact-section {
-        padding-inline: 6%;
-    }
-
-    .hobby-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .hobby-image {
-        height: 240px;
-    }
-}
-
-/* Tablet */
-@media (max-width: 950px) {
-    .navbar {
-        height: 76px;
-    }
-
-    .navbar .site-nav {
-        gap: 18px;
-    }
-
+@media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
-        gap: 55px;
-        padding: 125px 7% 80px;
         text-align: center;
-    }
-
-    .hero-content {
-        max-width: 760px;
-    }
-
-    .hero h1 {
-        font-size: clamp(52px, 9vw, 78px);
-    }
-
-    .hero-content > p {
-        margin-inline: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .now-playing {
-        margin-inline: auto;
+        padding: 100px 5% 60px;
     }
 
     .hero-photo {
-        margin-top: 0;
-    }
-
-    .image-container {
-        width: min(430px, 75vw);
-        height: min(590px, 72vw);
-        min-height: 500px;
+        margin: auto;
     }
 
     .about-layout,
@@ -2063,351 +1934,95 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .hobby-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .career-card {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .tools {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .tool {
-        min-width: 0;
-    }
-
-    .contact-card {
-        padding: 50px;
+    .hobby-grid,
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Phones */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
     .navbar {
-        height: 68px;
-        padding-inline: 5%;
+        padding: 15px 5%;
     }
 
-    .navbar .site-nav {
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        padding: 8px 5% 15px;
-        background: rgba(8,7,10,.97);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        transform: translateY(-12px);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
-    }
-
-    .navbar .site-nav.is-open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    .navbar .site-nav a {
-        width: 100%;
-        padding: 13px 5px;
-        font-size: 14px;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .navbar .site-nav a:last-child {
-        border-bottom: 0;
-    }
-
-    .menu-toggle {
-        display: flex;
+    .navbar nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
-        padding: 105px 5% 65px;
-        gap: 45px;
-    }
-
-    .eyebrow {
-        margin-bottom: 20px;
-        letter-spacing: 3px;
+        display: flex;
+        flex-direction: column;
+        padding: 90px 5% 50px;
+        gap: 40px;
     }
 
     .hero h1 {
-        font-size: clamp(42px, 13vw, 58px);
-        line-height: .98;
-        letter-spacing: -2px;
-        margin-bottom: 25px;
-    }
-
-    .hero-content > p {
-        font-size: 14px;
-        line-height: 1.75;
+        font-size: 45px;
+        line-height: 1;
     }
 
     .hero-buttons {
         flex-direction: column;
         width: 100%;
-        margin-top: 28px;
     }
 
-    .primary-button,
-    .secondary-button {
+    .hero-buttons a {
         width: 100%;
         text-align: center;
-        padding: 14px 18px;
-    }
-
-    .now-playing {
-        display: flex;
-        margin-top: 35px;
-        padding-top: 20px;
-        gap: 10px;
-        text-align: left;
-    }
-
-    .now-playing strong {
-        font-size: 8px;
-    }
-
-    .wave {
-        display: none;
     }
 
     .image-container {
-        width: min(100%, 360px);
-        height: min(480px, 125vw);
-        min-height: 400px;
-        border-radius: 180px 180px 16px 16px;
-    }
-
-    .photo-decoration {
-        right: -25px;
-        top: 30px;
-        font-size: 120px;
-    }
-
-    .floating-note {
-        right: -2px;
-        bottom: 25px;
-        width: 54px;
-        height: 54px;
-        font-size: 20px;
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin: auto;
     }
 
     .section,
     .contact-section {
-        padding: 75px 5%;
-    }
-
-    .section-heading {
-        margin-bottom: 38px;
-    }
-
-    .section-heading > span {
-        letter-spacing: 3px;
+        padding: 60px 5%;
     }
 
     .section-heading h2 {
-        font-size: clamp(40px, 12vw, 52px);
-        line-height: 1.02;
+        font-size: 40px;
     }
 
-    .info-card,
-    .intro-card {
-        padding: 22px;
-    }
-
-    .profile-details p {
-        font-size: 12px;
-    }
-
-    .intro-card .large-text {
-        font-size: 21px;
-    }
-
-    .intro-card p {
-        font-size: 13px;
-        line-height: 1.8;
-    }
-
-    .quote-mark {
-        right: 10px;
-        font-size: 120px;
-    }
-
-    .career-card {
-        padding: 28px 22px;
-        gap: 20px;
-    }
-
-    .career-card h3 {
-        font-size: 27px;
-    }
-
-    .career-card > p {
-        font-size: 13px;
-    }
-
+    .about-layout,
+    .skills-layout,
     .hobby-grid,
     .project-grid {
+        display: grid;
         grid-template-columns: 1fr;
-    }
-
-    .hobby-image {
-        height: clamp(230px, 72vw, 310px);
-    }
-
-    .hobby-content {
-        padding: 20px;
-    }
-
-    .hobby-content h3 {
-        font-size: 23px;
-    }
-
-    .skill-row {
-        grid-template-columns: 35px minmax(0, 1fr) 24px;
-        gap: 8px;
-        padding: 23px 5px;
-    }
-
-    .skill-row:hover {
-        padding-left: 10px;
-    }
-
-    .skill-name h3 {
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
-    .skill-name small {
-        display: block;
-        margin-top: 7px;
-        color: var(--gray);
-        font-family: "DM Sans", sans-serif;
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    .skill-arrow {
-        font-size: 17px;
-    }
-
-    .tools-card {
-        padding: 25px 20px;
-    }
-
-    .tools-card h3 {
-        font-size: 29px;
-        margin-bottom: 22px;
     }
 
     .tools {
         grid-template-columns: 1fr;
     }
 
-    .project-top {
-        padding: 17px 18px;
-    }
-
-    .project-art {
-        height: 190px;
-    }
-
-    .project-art .circle {
-        width: 145px;
-        height: 145px;
-    }
-
-    .project-icon {
-        font-size: 45px;
-    }
-
-    .project-info {
-        padding: 21px;
-    }
-
-    .project-info h3 {
-        font-size: 24px;
-    }
-
-    .contact-section {
-        padding-top: 45px;
-        padding-bottom: 70px;
-    }
-
     .contact-card {
-        padding: 35px 22px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
-    }
-
-    .contact-card h2 {
-        font-size: clamp(38px, 11vw, 52px);
+        padding: 30px 20px;
     }
 
     footer {
-        padding: 30px 5%;
         flex-direction: column;
-        gap: 12px;
         text-align: center;
+        gap: 10px;
     }
 }
 
-/* Very small phones */
-@media (max-width: 380px) {
+@media (max-width: 400px) {
     .hero h1 {
-        font-size: 40px;
-    }
-
-    .image-container {
-        min-height: 360px;
-        height: 112vw;
-    }
-
-    .section-heading h2 {
         font-size: 38px;
     }
 
-    .skill-row {
-        grid-template-columns: 30px minmax(0, 1fr) 20px;
+    .section-heading h2 {
+        font-size: 34px;
     }
 
-    .skill-name h3 {
-        font-size: 18px;
-    }
-
-    .skill-name small {
-        font-size: 9px;
-    }
-
-    .career-card h3 {
-        font-size: 24px;
+    .contact-card h2 {
+        font-size: 34px;
     }
 }
-
-/* Accessibility / motion */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
-}
-
